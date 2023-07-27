@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Booking</title>
+    <style>
+        body {
+            background-image: url('background_image.jpg');
+            background-size: cover;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+        }
+        .container {
+            max-width: 400px;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 5px;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .container input[type="text"],
+        .container input[type="email"],
+        .container input[type="number"] {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+        .container select {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 4px;
+        }
+        .container input[type="submit"] {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Company Name</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+    <div class="container">
+        <h2>Ticket Booking</h2>
+        <form action="/booking" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <select name="destination" required>
+                <option value="" selected disabled>Select Destination</option>
+                <option value="Destination 1">Destination 1</option>
+                <option value="Destination 2">Destination 2</option>
+                <option value="Destination 3">Destination 3</option>
+            </select>
+            <input type="number" name="num_tickets" placeholder="Number of Tickets" required>
+            <input type="submit" value="Book Tickets">
+        </form>
+    </div>
+</body>
+</html>

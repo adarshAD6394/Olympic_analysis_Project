@@ -21,27 +21,87 @@
         </nav>
 
     </div>
-    <div>
-        <main>
-            <div class="forum-container">
-              <div class="forum">
 
-                <!-- Forum topics will be dynamically generated here -->
-                <div class="topic">
-                  <h2>Topic Title</h2>
-                  <p>Topic description or content</p>
-                </div>
-              </div>
-        
-              <aside class="sidebar">
-                
-              </aside>
-            </div>
-          </main>
-        
-          <footer>
-            <!-- Footer content here -->
-          </footer>
-    </div>
+    <!-- Disussion Forum -->
+    <div class="top-bar">
+          <h3>
+              Discussion
+          </h3>
+      </div>
+      <div class="main">
+          <ol>
+          </ol>
+      </div>
+      <div><a class="post" href="thread.html">New Post</a></div>
+      <script src="forum.js"></script>
+      <script>
+          console.log(threads);
+          var container = document.querySelector('ol');
+          for (let thread of threads) {
+              var html = `
+              <li class="row">
+                  <a class="thread" href="/thread.html?${thread.id}">
+                      <h4 class="title">
+                          ${thread.title}
+                      </h4>
+                      <div class="bottom">
+                          <p class="timestamp">
+                              ${new Date(thread.date).toLocaleString()}
+                          </p>
+                          <p class="comment-count">
+                              ${thread.comments.length} comments
+                          </p>
+                      </div>
+                  </a>
+              </li>
+              `
+              container.insertAdjacentHTML('beforeend', html);
+          }
+      </script>
+      <style>
+          .thread{
+              text-decoration: none;
+              color: black;
+          }
+          h1, h4, ol {
+              margin: 0;
+          }
+          p {
+              margin: 5px 0;
+          }
+          .top-bar {
+              margin: 10px;
+              background-color: #c2c2fc;
+              padding: 0 40px;
+              border-radius: 10px;
+          }
+          .main {
+              background-color: #F6F6EF;
+              padding: 10px 15px;
+          }
+          .row {
+              padding: 5px 0;
+          }
+          .bottom {
+              display: flex;
+              color: grey;
+              font-size: 12px;
+          }
+          .timestamp {
+              padding-right: 10px;
+          }
+          .post{
+            text-decoration: none;
+        cursor: pointer;
+        color: black;
+        padding: 10px;
+        border-radius: 10px;
+        background-color: white;
+        border: none;
+          }
+          .post:hover{
+            background-color: #c2c2fc;
+          }
+      </style>
 </body>
 </html>

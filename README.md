@@ -42,6 +42,6 @@ The Olympic Analysis Project is a web application aimed at providing insights in
 Contributions are welcome! If you'd like to contribute to the project, please fork the repository, make your changes, and submit a pull request.
 
 ## Contact
-For any inquiries or feedback, feel free to reach out to us at (mailto:guptaadarsh372001.com).
+For any inquiries or feedback, feel free to reach out to us at guptaadarsh372001.com.
 
 
